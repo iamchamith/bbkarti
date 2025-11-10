@@ -1,0 +1,203 @@
+/* ==========================================================================
+   #TOOLBAR
+   ========================================================================== */
+
+.bbk-toolbar {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	padding: $toolbar-padding;
+	background-color: transparent;
+	/*box-shadow: $toolbar-box-shadow;*/
+	
+
+	@include respond-to($breakpoint-tablet) {
+		padding: 20px 15px;
+	}
+}
+
+.bbk-toolbar__title {
+	display: inline-flex;
+	align-content: center;
+	align-items: center;
+	margin: 0;
+	color: $toolbar-title-color;
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 8px;
+
+	&.has-divider::after {
+		display: block;
+		width: $toolbar-divider-width;
+		height: $toolbar-divider-height;
+		margin: $toolbar-divider-margin;
+		background-color: $toolbar-divider-background-color;
+		/*content: " ";*/
+	}
+}
+
+.bbk-toolbar__meta {
+	visibility: hidden;
+	margin: 0;
+	color: $toolbar-meta-color;
+	font-size: $toolbar-meta-font-size;
+	    position: relative;
+    padding-left: 20px;
+	&:after{
+	    display: block;
+    width: 2px;
+    height: 15px;
+    background-color: #aeb6c2;
+    content: " ";
+    position: absolute;
+    top: 4px;
+    left: 10px;
+	}
+}
+
+.bbk-toolbar__icon {
+	display: block;
+	color: $toolbar-icon-color;
+	font-size: $toolbar-icon-font-size;
+
+	&.is-active {
+		color: $blue-300;
+	}
+
+	&.has-divider::after {
+		display: inline-block;
+		position: relative;
+		top: 0; // proper alignment
+		width: $toolbar-divider-width;
+		height: $toolbar-divider-height;
+		margin: $toolbar-divider-margin;
+		background-color: $toolbar-divider-background-color;
+		content: " ";
+	}
+}
+
+.bbk-toolbar__link {
+	color: $toolbar-link-color;
+	font-size: $toolbar-link-font-size;
+
+	&.has-dropdown::after {
+		display: inline-block;
+		margin-left: 10px;
+		color: inherit;
+		font-family: $base-icon-font;
+		font-size: 12px;
+		content: "\f3d0"; // ion-ios-arrow-down
+	}
+}
+
+
+/**
+ * Toolbar (tab-like) Navigation
+ */
+
+// We reuse scss variables from `bbk-tabs` component.
+.bbk-toolbar__nav {
+	@media only screen and (max-width: $breakpoint-mobile) {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+.bbk-toolbar__nav-item {
+	margin-right: 25px;
+	padding: 0 0 27px;
+	color: $tabs-link-color;
+	font-size: $tabs-link-font-size;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover {
+		color: $tabs-link-hover-color;
+		text-decoration: none;
+	}
+
+	&.is-active {
+		border-bottom: $tabs-link-active-border-width solid $tabs-link-active-border-color;
+		color: $tabs-link-active-color;
+		font-weight: $font-weight-bold;
+	}
+
+	@media only screen and (max-width: $breakpoint-mobile) {
+		padding-bottom: 20px;
+	}
+}
+
+/**
+ * Toolbar stats
+ *
+ * Numbers & states placed in the toolbar, used in performance.html page
+ */
+
+.bbk-toolbar__state {
+	border-right: $base-border-width solid $base-border-color;
+	text-align: center;
+
+	@include respond-to($breakpoint-tablet) {
+		margin-bottom: $spacer;
+		border-right: 0;
+
+		&:nth-child(3),
+		&:nth-child(4) {
+			margin-bottom: 0;
+		}
+	}
+
+	&:last-child {
+		border-right: 0;
+	}
+}
+
+.bbk-toolbar__state-number {
+	margin-bottom: 0;
+	font-size: $h2-font-size;
+}
+
+.bbk-toolbar__state-title {
+	color: $color-mute;
+	font-size: $text-font-size;
+	text-transform: uppercase;
+}
+
+@media (max-width:991px){
+
+	.bbk-toolbar__meta{
+		display: none;
+	}
+.bbk-toolbar{
+	    flex-direction: column;
+    flex-basis: 100%;
+    align-items: stretch;
+    padding: 10px 0;
+	.bbk-btn{
+		    margin-left: 0 !important;
+    margin-top: 5px;
+	margin-right:0 !important;
+	}
+
+	> .u-flex{
+		    flex-direction: column;
+			.bbk-field{
+				width:100%;
+			}
+
+			div{
+				    margin-right: 0 !important;
+					margin-left: 0 !important;
+			}
+
+			.bbk-btn{
+				    width: 100%;
+    margin-top: 5px;
+	margin-right:0 !important;
+	margin-left: 0;
+			}
+	}
+}
+}

@@ -1,0 +1,229 @@
+/* ==========================================================================
+   #INPUTS
+   ========================================================================== */
+
+.bbk-input {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: $input-padding;
+	transition: all .3s;
+	border: $input-border-width solid $input-border-color;
+	border-radius: $input-border-radius;
+	background-color: $input-background-color;
+	color: $input-focus-color;
+	font-size: $input-font-size;
+	font-weight: $input-font-weight;
+	resize: none;
+	min-height: 38px;
+	box-shadow: 0px 0px #2a313b;
+
+	&::placeholder {
+		transition: opacity 0.3s;
+		color: $input-placeholder-color;
+		font-weight: $input-placeholder-font-weight;
+		opacity: 0.5;
+	}
+
+	&:focus {
+		border-color: $input-focus-border-color;
+		outline: none;
+
+		&::placeholder {
+			opacity: 0.2;
+		}
+	}
+
+	&.is-disabled,
+	&:disabled {
+		border-color: $input-disabled-border-color;
+		background-color: $input-disabled-background-color;
+		color: $input-disabled-color;
+		cursor: not-allowed;
+	}
+}
+
+select{
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+/**
+ * Textarea
+ */
+
+// sass-lint:disable no-qualifying-elements
+textarea.bbk-input {
+	min-height: 90px;
+	font-size: $textarea-font-size;
+	font-weight: $textarea-font-weight;
+}
+// sass-lint:enable no-qualifying-elements
+
+
+/* State variants
+   ========================================================================== */
+
+.bbk-input--success {
+	border-color: $input-success-border-color;
+
+	&:focus {
+		border-color: $input-success-border-color;
+	}
+}
+
+.bbk-input--warning {
+	border-color: $input-warning-border-color;
+
+	&:focus {
+		border-color: $input-warning-border-color;
+	}
+}
+
+.bbk-input--danger {
+	border-color: $input-danger-border-color;
+	color: $input-danger-color;
+
+	&:focus {
+		border-color: $input-danger-border-color;
+		color: $input-danger-color;
+	}
+}
+
+
+.cuppa-dropdown {
+	.c-btn , .list-area{
+		box-shadow: none !important;
+	}
+	 .c-token {
+    background: #232d3c !important;
+}
+}
+
+.read-only{
+	.bbk-input.is-disabled, .bbk-input:disabled,.c-btn.disabled {
+		border-color: #dfe3e9;
+		background-color: #e6eaee47 !important;
+		color: #1d2531;
+		cursor: not-allowed;
+	}
+}
+
+.padding-small{
+	   padding: 1.18em 0;
+}
+
+.no-results{
+
+    color: #1744a2;
+    padding: 11px;
+}
+
+.ui-fileupload .ui-fileupload-choose{
+	input[type=file]{
+		height: 40px;
+    position: absolute;
+    top: 0px;
+    width: 150px;
+	z-index: 6;
+    opacity: 0;
+	}
+    span.ui-button-text.ui-clickable{
+        visibility: hidden;
+        &:after{
+               content: "Upload Images";
+    background-color: #e5e5e5;
+    width: 150px;
+    height: 40px;
+    visibility: visible;
+    display: block;
+    padding: 8px;
+    font-size: 14px;
+	text-align: center;
+	display: block;
+    position: absolute;
+    top: 0;
+	color: #232d3c;
+    font-weight: bold;
+            
+        }
+    }
+
+	
+}
+
+.ui-fileupload-row{
+	position: relative;
+	    margin-top: 5px;
+	img{
+		border: 1px solid #b7c0ce;
+    padding: 3px;
+	}
+	div:nth-child(2),div:nth-child(3){
+		display: none;
+	}
+}
+
+.ui-fileupload-files{
+		margin-top: 25px;
+	}
+
+	.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button,  {
+    border: 1px solid #ea0227;
+    color: #FFFFFF;
+    background: #ea0227;
+    border-radius: 30px;
+    -webkit-transition: background-color .2s;
+    -moz-transition: background-color .2s;
+    transition: background-color .2s;
+	
+}
+
+.ui-fileupload-files .ui-button{
+    position: absolute;
+    top: -6px;
+    right: -4px;
+	    padding: 2px 5px;
+
+}
+
+.ui-button-icon-only .ui-button-text, .ui-button-text-empty .ui-button-text {
+    padding: .25em;
+    text-indent: -9999999px;
+	display: none;
+}
+.pi-times:before {
+    content: "\f00d";
+}
+
+.pi-times{
+	    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.abs-input{
+	position: absolute;
+    right: 96px;
+    bottom: 23px;
+    z-index: 8;
+}
+
+.save-only.abs-input {
+    position: absolute;
+    right: 12px;
+    bottom: 23px;
+    z-index: 8;
+}.checkbox::checked+label{
+    color: #9a041c !important;
+}
+
+ng-select{
+    div:focus{
+    outline: none !important;
+}
+}

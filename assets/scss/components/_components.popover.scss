@@ -1,0 +1,116 @@
+/* ==========================================================================
+   #POPOVERS
+   ========================================================================== */
+
+.popover {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	max-width: $popover-max-width;
+	padding: 0;
+	border-radius: $base-border-radius;
+	background-clip: padding-box;
+	background-color: #ffffff;
+    border: 1px solid #ccc;
+	color: $popover-color;
+	text-align: left;
+	z-index: $z-index-400;
+	word-wrap: break-word;
+	box-shadow: -6px 0 12px rgba(0, 0, 0, 0.14);
+
+	// hide Bootstrap's default arrow
+	.arrow {
+		display: none;
+	}
+
+	// popover arrow
+	&::before {
+		position: absolute;
+		border: 12px solid transparent;
+		content: " ";
+	}
+
+	// bootstrap transitions
+	&.fade {
+		transition: opacity 0.3s;
+		opacity: 0;
+		pointer-events: none;
+
+		&.show {
+			opacity: 1;
+			pointer-events: none;
+		}
+	}
+
+	/**
+	 * 1. (bs-popover-*) classes are inserted by bootstrap's popover plugin, we 
+	 *    customize these classes for better compatibility with Dashboard UI Kit.
+	 */
+	&.bs-popover-top { /* [1] */
+		margin-bottom: $spacer-small;
+
+		// popover arrow
+		&::before {
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			border-top-color: #fff;
+		}
+	}
+
+	&.bs-popover-bottom { /* [1] */
+		margin-top: $spacer-small;
+
+		// popover arrow
+		&::before {
+			bottom: 100%;
+			left: 50%;
+			transform: translate(-50%, 0);
+			border-bottom-color: #fff;
+		}
+	}
+
+	&.bs-popover-right { /* [1] */
+		margin-left: $spacer-small;
+
+		// popover arrow
+		&::before {
+			top: 50%;
+			right: 100%;
+			transform: translate(0, -50%);
+			border-right-color: #fff;
+		}
+	}
+
+	&.bs-popover-left { /* [1] */
+		margin-right: $spacer-small;
+
+		// popover arrow
+		&::before {
+			top: 50%;
+			left: 100%;
+			transform: translate(0, -50%);
+			border-left-color: #fff;
+		}
+	}
+
+	.popover-header{
+		padding: 6px 15px;
+		background-color: #f7f7f7;
+		border-bottom: 1px solid #ebebeb;
+		border-radius: 4px 4px 0 0;
+		font-size: 14px;
+		// font-weight: 600;
+	}
+
+	.popover-body{
+		padding: 4px 15px;
+		padding-bottom: 15px;
+
+	}
+
+
+
+}
+

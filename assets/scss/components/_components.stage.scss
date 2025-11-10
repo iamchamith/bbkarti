@@ -1,0 +1,91 @@
+/* ==========================================================================
+   #STAGE
+   ========================================================================== */
+
+/**
+ * Stage component is used to describe the project you are working on based on
+ * multiple stages. This component is used in project-overview.html page.
+ */
+
+.bbk-stage {
+	margin-bottom: $spacer;
+	border: $base-border-width solid $base-border-color;
+	border-radius: $base-border-radius;
+	background-color: $base-background-color;
+}
+
+.bbk-stage__header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: $spacer-small $spacer;
+	border-bottom: $base-border-width solid $base-border-color;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.bbk-stage__header-img {
+	max-width: 60px;
+	margin-right: 20px;
+	border-radius: $base-border-radius;
+	overflow: hidden;
+}
+
+.bbk-stage__icon {
+	width: 30px;
+	height: 30px;
+	margin-right: $spacer-xsmall;
+	border: $base-border-color solid $base-border-width;
+	border-radius: 100%;
+	color: $color-mute;
+	font-size: 14px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.bbk-stage__panel {
+	border-bottom: $base-border-width solid $base-border-color;
+
+	/**
+	 * Bootstrap classes used to show and hide sidebar submenu.
+	 * This behaviour depends on collapse.js plugin.
+	 */
+	&.collapse {
+		display: none;
+
+		&.show {
+			display: block;
+	  	}
+	}
+
+	&.collapsing {
+		position: relative;
+		height: 0;
+		transition: height 0.3s;
+		overflow: hidden;
+	}
+
+	&--mute {
+		background-color: $secondary-background-color;
+	}
+}
+
+.bbk-stage__label {
+	display: flex;
+	align-items: center;
+	padding: $spacer-small $spacer;
+	background-color: $color-success;
+	color: $white;
+}
+
+.bbk-stage__label-icon {
+	margin-right: $spacer-xsmall;
+	font-size: $h2-font-size;
+}
+
+.bbk-stage__label-title {
+	color: $white;
+}

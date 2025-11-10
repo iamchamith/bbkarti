@@ -1,0 +1,129 @@
+/* ==========================================================================
+   #COUNTER NAV
+   ========================================================================== */
+
+/**
+ * Counter nav is a different style of navigation, every navigation link has 
+ * an icon (that contains current number) before it. 
+ *
+ * This component is used in project-overview.html page.
+ */
+
+.bbk-counter-nav {
+	display: flex;
+	align-content: center;
+	align-items: center;
+}
+
+.bbk-counter-nav__title {
+	margin-right: $spacer-xsmall;
+	color: $color-mute;
+}
+
+.bbk-counter-nav__item {
+	margin-right: rem(20px);
+}
+
+.bbk-counter-nav__link {
+	color: $color-mute;
+	font-size: 14px;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&.is-active {
+		color: $heading-color;
+	}
+}
+
+.bbk-counter-nav__counter {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	margin-right: 10px;
+	border: $base-border-width solid $base-border-color;
+	border-radius: 100%;
+	background-color: $secondary-background-color;
+	color: $color-mute;
+	text-align: center;
+
+	.bbk-counter-nav__link.is-active & {
+		@include linear-gradient(to bottom, #2EA1F8, #1990EA);
+		border-color: #2EA1F8;
+		color: $white;
+	}
+}
+
+/**
+ * Inverse 
+ *
+ * Use `.bbk-counter-nav--inverse` when using this component on a dark background.
+ */
+
+.bbk-counter-nav--inverse {
+	.bbk-counter-nav__counter {
+		border-radius: 100%;
+		border-color: #313C4D;
+		background-color: #313C4D;
+		color: #828A96;
+		text-align: center;
+
+		.bbk-counter-nav__link.is-active & {
+			color: $white;
+		}
+	}
+
+	.bbk-counter-nav__link.is-active {
+		color: $white;
+	}
+}
+
+
+timepicker{
+	td{
+		text-align: center;
+	.btn.btn-link{
+		display: inline-block;
+		margin: auto;
+		color: #232d3c;
+	}
+
+	.btn.btn-default.text-center{
+		    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #1a91eb;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-appearance: none;
+	    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f2f4f7));
+    background: linear-gradient(to bottom, #fff, #f2f4f7);
+    border-color: #dfe3e9;
+    color: #354052;
+	}
+	}
+}
+
+
+
+
+
+
+
+

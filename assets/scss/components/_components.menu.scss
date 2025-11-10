@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #MENU
+   ========================================================================== */
+
+/**
+ * A list of horizontal or vertical links, and unlike `bbk-menu` component, this 
+ * component shouldn't be used inside a sidebar or any other component.
+ */
+
+.bbk-menu {}
+
+.bbk-menu__title {
+	margin: 0 0 $spacer-xsmall 20px;
+	color: $color-mute;
+	font-size: $text-small-font-size;
+	font-weight: $font-weight-normal;
+	text-transform: uppercase;
+}
+
+.bbk-menu__link {
+	display: inline-block;
+	width: 100%;
+	padding: 5px 0 5px 20px;
+	border-radius: $base-border-radius;
+	color: $heading-color;
+	font-size: $text-font-size;
+	font-weight: $font-weight-normal;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&.is-active {
+		background-color: $color-info;
+		color: $white;
+	}
+}
+
+.bbk-menu__icon {
+	margin-right: $spacer-xsmall;
+	color: $color-mute;
+
+	.bbk-menu__link:hover & {
+		color: $link-color;
+	}
+}

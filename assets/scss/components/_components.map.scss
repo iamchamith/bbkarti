@@ -1,0 +1,44 @@
+/* ==========================================================================
+   #MAP
+   ========================================================================== */
+
+/**
+ * Map is powered by jqvmap plugin, these labels are added manually.
+ */
+
+.bbk-map__visual {
+	margin-bottom: $spacer;
+}
+
+.bbk-map__labels {
+	&--left {
+		margin-right: $spacer-small;
+		margin-left: $spacer-large;
+	}
+
+	&--right {
+		margin-right: $spacer-large;
+		margin-left: $spacer-small;
+	}
+
+	@include respond-to($breakpoint-wide) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+.bbk-map__label {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: $spacer-xsmall;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.bbk-map__country,
+.bbk-map__number {
+	color: $heading-color;
+}
+

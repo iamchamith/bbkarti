@@ -1,0 +1,297 @@
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+
+/**
+ * 1. The border-collapse CSS property specifies that the table's borders are 
+ *    collapsed and it means that adjacent cells share borders.
+ */
+
+.bbk-table {
+	display: table;
+	width: 100%;
+	max-width: 100%;
+	border: $table-border-width solid $table-border-color;
+	border-radius: $table-border-radius;
+	background-color: $table-background-color;
+	border-collapse: collapse; /* [1] */
+}
+
+
+/**
+ * Responsive Tables
+ *
+ * Wrap any table with one of these classes to make it responsive at certain
+ * breakpoint.
+ *
+ * 1. Wrap your table with this class `bbk-table-responsive` if the table's width 
+ * is larger than 1200px.
+ */
+
+.bbk-table-responsive { /* [1] */
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	.bbk-table {
+		display: block;
+		overflow-y: hidden;
+	}
+}
+
+@media (max-width: $breakpoint-mobile) {
+	.bbk-table-responsive\@mobile {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		.bbk-table {
+			display: block;
+			overflow-y: hidden;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-tablet) {
+	.bbk-table-responsive\@tablet {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		.bbk-table {
+			display: block;
+			overflow-y: hidden;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-desktop) {
+	.bbk-table-responsive\@desktop {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		.bbk-table {
+			display: block;
+			overflow-y: hidden;
+		}
+	}
+}
+
+@media (max-width: $breakpoint-wide) {
+	.bbk-table-responsive\@wide {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		.bbk-table {
+			display: block;
+			overflow-y: hidden;
+		}
+	}
+}
+
+/**
+ * Use `bbk-table--zebra` to add zebra-styling to table rows inside the table.
+ */
+
+.bbk-table--zebra {
+	tbody tr:nth-of-type(odd) {
+		// background-color: $table-zebra-row-background-color;
+	}
+}
+
+
+/**
+ * Highlight table row on hover.
+ */
+
+.bbk-table--highlight {
+	tbody tr:hover {
+		background-color: $table-highlight-row-background-color;
+	}
+}
+
+
+.bbk-table--fixed {
+	table-layout: fixed;
+}
+
+/**
+ * Table title/caption
+ * <caption> 
+ */
+
+.bbk-table__title {
+	position: relative;
+	padding: 25px 30px;
+	border: $base-border-width solid #e2e2e2;
+	border-bottom: 0;
+	border-radius: 4px 4px 0 0;
+	background-color: $table-title-background-color;
+	color: $table-title-color;
+	font-size: 24px;
+	text-align: left;
+
+	small {
+		display: inline-block;
+		margin-left: 10px;
+		color: $color-mute;
+		font-size: 14px;
+
+		// divider
+		&::before {
+			display: inline-block;
+			position: relative;
+			bottom: -2px;
+			width: 1px;
+			height: 14px;
+			margin-right: 12px;
+			background-color: #DFE3E9;
+			content: "";
+		}
+	}
+}
+
+/**
+ * A small icon in table title used to perform general action on table like
+ * downloading table content as a report.
+ */
+
+.bbk-table__title-action {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	color: #AFB4BB;
+	font-size: 22px;
+}
+
+/**
+ * Table Head
+ *
+ * Slimmer version of table's head with less sapcing and darker background
+ */
+
+.bbk-table__head--slim {
+	padding: 0;
+	background-color: $table-head-slim-background-color;
+
+	.bbk-table__cell {
+		padding: $table-head-cell-padding;
+	}
+}
+
+
+/**
+ * Table Row
+ */
+
+.bbk-table__row {
+	border-top: $table-border-width solid $table-border-color; /* [1] */
+	border-bottom: $table-border-width solid $table-border-color; /* [1] */
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+.bbk-table__row--success,
+.bbk-table__row--danger,
+.bbk-table__row--info,
+.bbk-table__row--warning {
+	border-left: 3px solid;
+}
+
+.bbk-table__row--success {
+	border-left-color: $color-success;
+}
+
+.bbk-table__row--danger {
+	border-left-color: $color-danger;
+}
+
+.bbk-table__row--info {
+	border-left-color: $color-info;
+}
+
+.bbk-table__row--warning {
+	border-left-color: $color-warning;
+}
+
+
+/**
+ * Table Cell
+ */
+
+.bbk-table__cell {
+	padding: $table-cell-padding;
+	color: $table-cell-color;
+	font-size: $table-cell-font-size;
+	font-weight: $table-cell-font-weight;
+	text-align: left;
+	white-space: normal;
+	vertical-align: middle;
+	word-break: normal;
+
+	&:last-child {
+		padding-right: $spacer;
+	}
+}
+
+.bbk-table__cell--head {
+	color: $color-mute;
+	font-size: $text-font-size;
+	font-weight: $font-weight-semibold;
+}
+
+.bbk-table__cell:hover{
+/*background-color: #daf5ff;*/
+ cursor: pointer;
+}
+
+/**
+ * Table cell with image
+ *
+ * 2. Use flexbox to make sure all table-cell content is vertically centered.
+ */
+
+.bbk-table__cell--img {
+	display: flex; /* [2] */
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+
+.bbk-table__row_published{
+	// background-color: #299a045c   !important;
+	box-shadow: inset 8px 0px rgb(28, 195, 28);
+}
+
+.bbk-table__row_open{
+	// background-color: #299a045c   !important;
+	box-shadow: inset 8px 0px rgb(28, 195, 28);
+}
+
+.bbk-table__row_close{
+	// background-color: #299a045c   !important;
+	box-shadow: inset 8px 0px rgb(28, 73, 195);
+}
+
+.bbk-table__row_cancel{
+	// background-color: #299a045c   !important;
+	box-shadow: inset 8px 0px #e90226;
+}
+
+.bbk-table__row_unpublished{
+	//background-color: #ffffff !important;
+}
+
+.bbk-table__row_obsoleted{
+	// background-color: #299a045c   !important;
+	box-shadow: inset 8px 0px #e90226;
+}

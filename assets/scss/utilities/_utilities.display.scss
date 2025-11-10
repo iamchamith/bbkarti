@@ -1,0 +1,54 @@
+/* ==========================================================================
+   #DISPLAY UTILITIES
+   ========================================================================== */
+
+// sass-lint:disable no-important
+
+.u-block {
+	display: block !important;
+}
+
+.u-inline-block {
+	display: inline-block !important;
+}
+
+.u-inline {
+	display: inline !important;
+}
+
+
+
+.select-arrow{
+	    position: absolute;
+    right: 8px;
+    color: #8898ab;
+}
+
+.rel{
+	position: relative;
+	label{
+
+      margin-right: 0;
+    min-width: 80px;
+    max-width: 100px;
+	}
+}
+
+  .p-r-25{
+	      padding-right: 25px;
+  }
+
+  .auto-width{
+	  width: auto !important;
+  }
+  .max-field{
+        max-width: 200px;
+  }
+  .error-msg{
+	  background-color: #ffe3e1;
+    padding: 2px 6px;
+    color: #ee1e26;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-top: 5px;
+  }

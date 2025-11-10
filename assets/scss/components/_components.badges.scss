@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #BADGES
+   ========================================================================== */
+
+.bbk-badge {
+	display: inline-block;
+	margin: 0;
+	padding: $badge-padding;
+	border-radius: $badge-border-radius;
+	color: $badge-color;
+	font-size: $badge-font-size;
+	font-weight: $badge-font-weight;
+	text-transform: uppercase;
+	cursor: pointer;
+	
+
+	/**
+	 * Badges with icons
+	 */
+	> i {
+		margin-right: rem(5px);
+	}
+}
+
+td .bbk-badge{
+	    min-width: 81px;
+    text-align: center;
+}
+
+.bbk-badge--small {
+	padding: $badge-small-padding;
+	font-size: $badge-small-font-size;
+}
+
+.bbk-badge--xsmall {
+	padding: $badge-xsmall-padding;
+	font-size: $badge-small-font-size;
+}
+
+
+/* Style variants
+   ========================================================================== */
+
+.bbk-badge--success {
+	background-color: $badge-success-background-color;
+}
+
+.bbk-badge--info {
+	background-color: $badge-info-background-color;
+}
+
+.bbk-badge--warning {
+	background-color: $badge-warning-background-color;
+}
+
+.bbk-badge--danger {
+	background-color: $badge-danger-background-color;
+}
+
+.bbk-badge--primary {
+	background-color: $badge-primary-background-color;
+}
+
+.bbk-badge--secondary {
+	background-color: $badge-secondary-background-color;
+	color: $badge-secondary-color;
+}

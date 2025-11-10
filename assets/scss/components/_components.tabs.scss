@@ -1,0 +1,243 @@
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+
+/**
+ * A wrapper for tabs navigation and content.
+ */
+
+.bbk-tabs {
+	.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem 1rem;
+}
+
+.nav-link:hover, .nav-link:focus {
+  text-decoration: none;
+}
+
+.nav-link.disabled {
+  color: #6c757d;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0px 1.5rem;
+}
+
+.nav-tabs .nav-item {
+  margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+  /*border: 1px solid transparent;*/
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  color: #374152;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: #6c757d;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #9a041d;
+  background-color: #fff;
+	}
+
+.nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #007bff;
+}
+
+.nav-fill .nav-item {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.nav-justified .nav-item {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+.tab-content{
+	  padding: 1.5rem;
+}
+
+}
+
+
+/**
+ * 1. Works as a wrapper for tabs navigation links.
+ */
+
+.bbk-tabs__list { /* [1] */
+	padding: $tabs-list-padding;
+	border: $tabs-list-border-width solid $tabs-list-border-color;
+	border-top-left-radius: $tabs-list-border-radius;
+	border-top-right-radius: $tabs-list-border-radius;
+	background-color: $tabs-list-background-color;
+
+	li {
+		display: inline-block;
+	}
+}
+
+
+.bbk-tabs__link {
+	margin: $tabs-item-margin;
+	padding: $tabs-link-padding;
+	color: $tabs-link-color;
+	font-size: $tabs-link-font-size;
+
+	&:hover {
+		color: $tabs-link-hover-color;
+		text-decoration: none;
+	}
+
+	&.is-active,
+	&.active {
+		border-bottom: $tabs-link-active-border-width solid $tabs-link-active-border-color;
+		color: $tabs-link-active-color;
+		font-weight: $font-weight-bold;
+	}
+}
+
+/**
+ * Splitted-style of tabs navigation list
+ */
+
+.bbk-tabs__list--splitted {
+	display: flex;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+
+	.bbk-tabs__item {
+		align-self: flex-end;
+		margin: 0;
+	}
+
+	.bbk-tabs__link {
+		display: inline-block;
+		align-self: flex-end;
+		margin-right: 4px;
+		padding: 15px 30px;
+		border: 1px solid $tabs-list-border-color;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		font-size: 14px;
+		@include linear-gradient(to bottom, $tabs-splitted-link-gradient);
+
+		&.is-active,
+		&.active {
+			padding: 20px 35px;
+			border-bottom-color: $base-background-color;
+			background: $base-background-color;
+			font-size: 18px;
+		}
+	}
+}
+
+.bbk-tabs__pane {
+	display: none;
+	margin: $tabs-pane-margin;
+	padding: $tabs-pane-padding;
+	border: $tabs-pane-border-width solid $tabs-pane-border-color;
+	border-top: 0;
+	border-bottom-left-radius: $tabs-pane-border-radius;
+	border-bottom-right-radius: $tabs-pane-border-radius;
+	background-color: $tabs-pane-background-color;
+	color: $tabs-pane-color;
+
+	&.is-active,
+	&.active {
+		display: block;
+	}
+}
+
+.well{
+	    background-color: #f2f2f2;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+// by Himashika
+.bbk-tabs .nav-link {
+	display: block;
+	padding: 0.5rem 0.9rem;
+	
+}
+.bbk-tabs .nav-tabs .nav-link{
+	color: #fff;
+	font-weight: 400;
+}
+.bbk-tabs .nav-tabs {
+	// border-bottom: 1px solid #dee2e6;
+	padding: 5px 10px 0px 10px;
+	background-color: #222c3c;
+}
+.bbk-tabs .nav-tabs .nav-link.disabled {
+	color: #ffffff4a;
+}
+.bbk-card.tittle-color .panel-heading{
+	margin: -15px;
+	margin-bottom: 15px !important;
+	padding: 10px 15px;
+	background-color:#0f61e4 !important;
+	font-size: 16px;
+}
+.bbk-card.tittle-color .panel-title{
+	color: #fff !important;
+	margin-bottom: 0;
+}
+.bbk-card.tittle-color .panel-title .accordion-toggle{
+	padding: 0;
+	font-size: 16px;
+}
+
+.bbk-card.tittle-color .panel-title .accordion-toggle::after{
+	color: #fff !important;
+	right: 0 !important;
+	left: auto;
+}

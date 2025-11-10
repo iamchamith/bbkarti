@@ -1,0 +1,294 @@
+/* ==========================================================================
+   #SIDEBAR
+   ========================================================================== */
+
+
+.bbk-sidebar {
+	position: relative;
+	height: 100%;
+	margin: 0;
+	padding-bottom: $spacer;
+	background-color: #222C3C;
+	overflow: auto;
+	overflow-x: hidden;
+	z-index: $z-index-200; // DEV NOTE: COMPARE WITH `o-page__sidebar`
+	@include scrollbar;
+	/*background-image: linear-gradient(-154deg, #1643A3 8%, #701169 90%);*/
+}
+
+
+.bbk-sidebar__brand {
+	display: flex;
+	align-items: center;
+	height: $navbar-height; /* [1] */
+	padding-left: $spacer;
+	border-bottom: $base-border-width solid #2a3547;
+	color: $white;
+	font-size: 18px;
+	vertical-align: middle;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.bbk-sidebar__brand-img {
+	display: inline-block;
+	height: 24px; /* [2] */
+	margin-right: $spacer-xsmall;
+}
+
+.bbk-sidebar__title {
+	margin-top: 25px;
+	margin-bottom: 15px;
+	padding-left: 30px;
+	color:$white;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.bbk-sidebar__divider {
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #2A3547;
+}
+
+/**
+ * Sidebar naviagtion menu
+ */
+
+.bbk-sidebar__item {
+	position: relative;
+	transition: background-color 0.2s;
+
+	/**
+	 * 1. Add small arrow to `bbk-menu__link` when `bbk-menu__item` has sub-menu.
+	 */
+	&.has-submenu > .bbk-sidebar__link::after { /* [1] */
+		display: inline-block;
+		position: absolute;
+		top: 12px;
+		right: 15px;
+		color: #B7C0CD;
+		font-family: $base-icon-font;
+		content: "\f0d7"; // fa-caret-down
+	}
+
+	&.is-open {
+		    background-color: transparent;
+    		box-shadow: none;
+
+		> .bbk-sidebar__link::after {
+			content: "\f0d8"; // fa-caret-up
+		}
+	}
+}
+
+.bbk-sidebar__list{
+	padding-top: 16px;
+}
+
+
+.bbk-sidebar__link {
+	display: flex;
+	align-content: center;
+	align-items: center;
+	padding: 10px 0 10px 8px;
+	transition: background-color .2s;
+	color: #fff;
+	font-size: .875rem;
+
+	i{
+		    width: 22px;
+			text-align: center;
+	}
+
+	&.is-active {
+		/*background-color: #1D2531;
+		box-shadow: inset 3px 0 0 0 #00A8FF;
+		    border-radius: 0 35px 35px 0;
+			margin-right:5px;*/
+	}
+
+	&:hover {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+/**
+ * Sub Menu
+ */
+.bbk-sidebar__submenu {
+	/**
+	 * Bootstrap classes used to show and hide sidebar submenu.
+	 * This behaviour depends on collapse.js plugin.
+	 */
+	&.collapse {
+		display: none;
+	}
+
+	&.show {
+		display: block;
+	}
+
+	&.collapsing {
+		position: relative;
+		height: 0;
+		transition: height 0.3s;
+		overflow: hidden;
+	}
+}
+
+/* Style Variation - Light Sidebar
+   ========================================================================== */
+
+.bbk-sidebar--light {
+	border-right: $base-border-width solid $base-border-color;
+	background-color: $white;
+
+	.bbk-sidebar__divider {
+		background-color: $base-border-color;
+	}
+
+	.bbk-sidebar__brand {
+		border-color: $base-border-color;
+		color: $heading-color;
+	}
+
+	.bbk-sidebar__item {
+		&.has-submenu > .bbk-sidebar__link::after { /* [1] */
+			color: #B7C0CD;
+		}
+
+		&.is-open {
+			background-color: #FAFBFC;
+		}
+	}
+
+	.bbk-sidebar__link {
+		color: #fff;
+
+		&.is-active {
+			background-color: transparent;
+			color: $heading-color;
+
+			i {
+				color: $link-color;
+			}
+
+			&:hover {
+				color: #2ea1f8;
+			}
+		}
+
+		&:hover {
+			color: $heading-color;
+		}
+	}
+
+	/**
+	 * 1. Add a slight shadow to the sidebar to make it popup a little bit
+	 *    on small screens.
+	 */
+	@include respond-to($breakpoint-desktop) {
+		box-shadow: 1px 1px 5px rgba(0,0,0,.1); /* [1] */
+	}
+}
+
+
+
+/* Sidebar toggle
+   ========================================================================== */
+
+/**
+ * An icon the is used to toggle (show/hide) sidebar on small screen, you will 
+ * find this component placed in the main navbar.
+ */
+
+.bbk-sidebar-toggle {
+	display: none;
+	position: relative;
+	width: $nav-toggle-width;
+	height: $nav-toggle-height;
+	margin: 0 $spacer-small 0 0; /* [1] */
+	padding: 0; /* [1] */
+	border: 0; /* [1] */
+	outline: none;
+	background-color: transparent; /* [1] */
+	cursor: pointer;
+
+	@include respond-to($breakpoint-desktop) {
+		display: block; /* [2] */
+	}
+}
+
+/**
+ * The hamburger icon itself, 3 bars stacked on top of each other. 
+ */
+
+.bbk-sidebar-toggle__bar {
+	display: block;
+	position: relative;
+	width: $nav-toggle-bar-width;
+	height: $nav-toggle-bar-height;
+	transition: all .3s;
+	border-radius: $nav-toggle-bar-border-radius;
+	background-color: $nav-toggle-bar-background-color;
+
+
+	&:first-child {
+		transform: translateY(-6px);
+	}
+
+	&:last-child {
+		transform: translateY(6px);
+	}
+}
+
+.close-sidebar .o-page__sidebar{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.right-pannel .panel-heading {
+    font-weight: 500;
+    font-size: 15px !important;
+    margin-bottom: 0;
+    padding: 6px 10px 4px 10px !important;
+    color: #272525bd !important;
+    border-bottom: 1px solid #efe7e7bd !important;
+}
+.right-panel {
+    border: 1px solid #a7a6a6;
+    margin-bottom: 10px;
+	border-radius: 3px;
+	padding: 7px;
+}
+.right-panel .panel-title {
+    font-weight: 500;
+    font-size: 16px;
+	margin-bottom: 0;
+    padding-bottom: 5px;
+	cursor: pointer;
+}
+.right-panel .panel-body {
+    font-size: 14px;
+    color: #3c3c37;
+	padding: 5px 10px;
+	border-top: 1px solid #a7a6a678;
+}
+.right-panel .tenant{
+	padding: 4px;
+    display: block;
+}
+.tenant:hover {
+    cursor: pointer;
+	font-weight: bold;
+	background-color: #e0e0df;
+    padding: 4px;
+}

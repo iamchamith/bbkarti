@@ -1,0 +1,56 @@
+/* ==========================================================================
+   #FILEITEM
+   ========================================================================== */
+
+.bbk-fileitem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: $spacer-small 0;
+	border-bottom: $base-border-width solid $base-border-color;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+}
+
+.bbk-fileitem__content {
+	display: flex;
+	align-items: center;
+}
+
+.bbk-fileitem__img {
+	max-width: 60px;
+	margin-right: 20px;
+	border-radius: $base-border-radius;
+	overflow: hidden;
+
+	> img {
+		display: block;
+	}
+}
+
+.bbk-fileitem__name {
+	display: flex;
+	align-items: center;
+	color: $heading-color;
+	font-weight: 600;
+
+	> img {
+		margin-right: 8px;
+	}
+}
+
+.bbk-fileitem__date {
+	color: $color-mute;
+	font-size: $text-font-size;
+
+	i {
+		margin: 0 5px;
+	}
+}

@@ -1,0 +1,6 @@
+{
+    "apiEndPoint": "https://localhost:21023/api/",
+    "publicSite" : "http://104.215.186.25:5056",
+    "sltb" : "http://104.215.186.25:5057",
+    "superline" : "http://104.215.186.25:5058"
+}

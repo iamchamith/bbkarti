@@ -1,0 +1,213 @@
+/* ==========================================================================
+   #TODO
+   ========================================================================== */
+
+/**
+ * 1. Get rid of white space cause by using `inline-flex`.
+ * 
+ * Read More: https://goo.gl/ajXW52
+ */
+
+.bbk-todo {
+	display: flex;
+	justify-content: space-between;
+	padding: rem(20px) $spacer;
+	border-top: $base-border-width solid $base-border-color;
+	font-size: 0; /* [1] */
+	font-weight: $choice-font-weight;
+
+	/**
+	 * Disabled state
+	 *
+	 * NOTE: `disabled` attribute must be added to <input>
+	 */
+	&.is-disabled {
+		.bbk-todo__label {
+			color: $choice-disabled-color;
+			cursor: default;
+
+			&::before {
+				border-color: $choice-disabled-border-color;
+				background-color: $choice-disabled-background-color;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/**
+ * 1. Hide default input and create a customized input.
+ * 2. Align the customized input with label.
+ */
+.bbk-todo__input { /* [1] */
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+
+	& + .bbk-todo__label {
+		display: inline-flex;
+		position: relative;
+		align-items: center;
+		padding-left: rem(25px);
+		color: $heading-color;
+		font-size: $text-font-size;
+		cursor: pointer;
+
+		.bbk-todo.is-completed & {
+			text-decoration: line-through;
+			opacity: .5;
+ 		}
+	}
+
+	& + .bbk-todo__label::before {
+		display: inline-block;
+		position: absolute;
+		top: 2px; /* [2] */
+		left: 0;
+		width: 16px;
+		height: 16px;
+		margin: 0 15px 0 0;
+		transition: all .3s;
+		border: $base-border-width solid $grey-600;
+		border-radius: 100%;
+		background-color: $white;
+		color: $white;
+		font-family: $base-icon-font;
+		font-size: 10px;
+		line-height: 15px;
+		text-align: center;
+		text-decoration: none;
+		content: "";
+		visibility: visible; /* [2] */
+	}
+
+	// custom designed checkbox
+	&:checked + .bbk-todo__label::before {
+		border-color: $grey-600;
+		background-color: $grey-600;
+		color: $white;
+		content: "\f00c"; // fa-check
+	}
+}
+
+
+/* Todo Stream
+   ========================================================================== */
+
+/**
+ * Todo task displayed as a stream. Used in active-projects.html page.
+ */
+
+.bbk-todo-stream {
+	display: block;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 7.5%;
+		left: 7px; // [width of (checkbox) input / 2] - 1px
+		width: 2px;
+		height: 85%;
+		background-color: $grey-600;
+		content: "";
+		opacity: 0.2;
+	}
+
+	.bbk-todo {
+		margin-bottom: 15px;
+		padding: 0;
+		border-top: 0;
+	}
+}
+
+.sindu_dragger {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  
+}
+
+.sindu_handle {
+  cursor: move;
+}
+
+.sindu_dragger table{
+  
+}
+
+.sindu_dragger li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: inherit;
+  
+}
+
+.sindu_dragger li table, .sindu_dragger tr, .sindu_dragger td {
+  box-sizing: border-box;
+  background-color: #e5e5e5;
+}
+
+
+.sindu_dragger thead th {
+    background-color: #F5F8FA !important;
+}
+.gu-mirror {
+  list-style: none;
+  
+}
+
+.sindu_dragger.sindu_column li {
+  float: left;
+  
+}
+
+.sindu_dragging .sindu_origin_table {
+  visibility: hidden;
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  
+}
+
+.gu-mirror li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: inherit;
+  
+}
+
+.gu-mirror li table, .gu-mirror tr, .gu-mirror th, .gu-mirror td {
+  box-sizing: border-box;
+  
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  
+}
+
+.gu-transit {
+  opacity: 0.5;
+}

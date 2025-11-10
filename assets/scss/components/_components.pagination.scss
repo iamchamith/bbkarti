@@ -1,0 +1,276 @@
+/* ==========================================================================
+   #PAGINATION
+   ========================================================================== */
+
+/**
+ * 1. Use flex utilitites with `bbk-pagination` for proper alignement of its
+ *    children.
+ */
+
+.bbk-pagination { /* [1] */
+	display: flex;
+	align-content: center;
+	align-items: center;
+	margin-bottom: $pagination-margin-bottom;
+	text-align: center;
+}
+
+
+/**
+ * 1. Remove wierd space between list items.
+ */
+
+.bbk-pagination__list {
+	display: flex;
+	font-size: 0; /* [1] */
+}
+
+.bbk-pagination__item {
+	display: inline-block;
+	margin-left: -1px; /* [1] */
+
+	&:first-child .bbk-pagination__control {
+		border-right: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&:last-child .bbk-pagination__control {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+
+
+/**
+ * 1. Line height of pagination control should equal its height for proper
+ *    vertical alignment.
+ */
+
+.bbk-pagination__control {
+	display: block;
+	height: $pagination-control-height; /* [1] */
+	padding: $pagination-control-padding;
+	border: $pagination-control-border-width solid $pagination-control-border-color;
+	border-radius: $base-border-radius;
+	background-color: $pagination-control-background-color;
+	color: $pagination-control-color;
+	font-size: $pagination-control-font-size;
+	font-weight: $pagination-control-font-weight;
+	line-height: $pagination-control-height; /* [1] */
+	text-align: center;
+
+	/**
+	 * 1. You may resize this icon if you used another icon font.
+	 */
+	i {
+		position: relative;
+		bottom: -1px;
+		transition: color .15s;
+		color: $pagination-control-color;
+		font-size: 16px; /* [1] */
+	}
+
+	&:hover {
+		color: $heading-color;
+		text-decoration: none;
+
+		i {
+			color: $heading-color;
+		}
+	}
+}
+
+.bbk-pagination__link {
+	display: block;
+	height: $pagination-link-height;
+	padding: $pagination-link-padding;
+	border: $pagination-link-border-width solid $pagination-link-border-color;
+	background-color: $pagination-link-background-color;
+	color: $pagination-link-color;
+	font-size: $pagination-link-font-size;
+	line-height: $pagination-link-height;
+	text-align: center;
+
+	&.is-active {
+		color: $pagination-link-active-color;
+	}
+
+	&:hover {
+		color: $heading-color;
+		text-decoration: none;
+	}
+}
+
+.bbk-pagination__counter {
+	display: inline-block;
+	margin: 0;
+	padding: $pagination-counter-padding;
+	color: $pagination-counter-color;
+	vertical-align: middle;
+}
+
+
+.pagination{
+	display:flex;
+	margin-bottom: 40px;
+}
+
+.pagination li:first-child{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.pagination li{
+	overflow: hidden;
+    border: 1px solid #e0e0e0;
+	
+}
+
+.pagination li:last-child{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+
+.pagination li a{
+    background-color: #fff;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	overflow: hidden;
+	display: block;
+}
+
+.pagination li.active a{
+   background-color: #e5e5e6;
+}
+//changed by Himashika
+.ngx-pagination{
+	display:flex;
+	margin-bottom: 40px;
+}
+
+.ngx-pagination li:first-child{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.ngx-pagination li:last-child{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.ngx-pagination li{
+	overflow: hidden;
+    border: 1px solid #e0e0e0;
+	
+}
+
+.ngx-pagination li:last-child{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+
+.ngx-pagination li a{
+    background-color: #fff;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	overflow: hidden;
+	display: block;
+}
+
+.ngx-pagination li.current a{
+   background-color: #e5e5e6;
+}
+.ngx-pagination .current {
+    background: transparent !important;
+	color: #000 !important;
+	padding: 10px 12px !important;
+	font-weight: 600;
+	font-size: 12px !important;
+}
+.ngx-pagination a:hover, .ngx-pagination button:hover {
+    background: #fff !important;
+}
+.ngx-pagination .disabled {
+    color: #171616 !important;
+    cursor: default;
+    padding: 8px !important;
+    font-size: 12px;
+	font-weight: 600;
+	width: 32px;
+    background: #fff;
+}
+.ngx-pagination .disabled span{
+	display: none;
+}
+.ngx-pagination .disabled:hover {
+    background: white !important;
+}
+.pagination-previous span,.pagination-next span {
+    display: none;
+}
+// .pagination-next{
+
+// 	background-color: #fff;
+//     padding: 10px 12px;
+//     font-size: 12px;
+//     font-weight: 600;
+//     color: #000;
+//     text-decoration: none;
+//     overflow: hidden;
+//     display: block;
+
+// 	&:after{
+// 		content: '»';
+// 		display: inline-block;
+// 	}
+
+// 	a{
+// 		display: none !important;
+// 	}
+    
+// }
+
+// .pagination-previous {
+	
+// 		background-color: #fff;
+// 		padding: 10px 12px;
+// 		font-size: 12px;
+// 		font-weight: 600;
+// 		color: #000;
+// 		text-decoration: none;
+// 		overflow: hidden;
+// 		display: block;
+	
+// 		&:after{
+// 			content: '«';
+// 			display: inline-block;
+			
+// 		}
+	
+// 		a{
+// 			display: none !important;
+// 		}
+		
+// 	}
+	// .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before{
+	// 	display: none !important;
+	// }
+	// li.pagination-next.page-item.disabled {
+	// 	display: none !important;
+	// }
+	// li.pagination-prev.page-item.disabled {
+	// 	display: none !important;
+	// }
+	// li.pagination-next.page-item {
+	// 	display: none !important;
+	// }
+	// li.pagination-prev.page-item {
+	// 	display: none !important;
+	// }

@@ -1,0 +1,250 @@
+/* ==========================================================================
+   #FULL CALENDAR CUSTOM
+   ========================================================================== */
+
+// sass-lint:disable-all
+
+/**
+ * Instead of modifying `_fullcalendar.scss` directly, we add Dashboard's custom
+ * styles for fullcanlendar plugin here.
+ */
+
+/**
+ * Calendar Wrapper
+ */
+
+.fbbk-view-container {
+	background-color: $base-background-color;
+}
+
+
+/**
+ * Calendar Header
+ *
+ * 1. These classes aren't created by fullcalendar plugin, but it's used to 
+ *    customize the header of the calender to suit Dashboard's original design.
+ */
+
+.fbbk-header { /* [1] */
+	height: 50px;
+	border-top-left-radius: $base-border-radius;
+	border-top-right-radius: $base-border-radius;
+	line-height: 50px;
+	@include linear-gradient(to bottom, $blue-300, $blue-400);
+}
+
+.fbbk-header-title { /* [1] */
+	margin: 0 0 0 30px;
+	color: $white;
+	font-size: $h6-font-size;
+}
+
+.fbbk-toolbar.fbbk-header-toolbar {
+	position: relative;
+	height: 50px;
+	line-height: 50px; // center vertically any text inside it
+	padding: 0 7px;
+	margin: 0;
+	background-color: #222C3C;
+}
+
+.fbbk-right .fbbk-button-group {
+	position: relative;
+	top: -43px;
+	right: 10px;
+	height: 36px;
+	border: 1px solid #1A83D2;
+	border-radius: $base-border-radius;
+}
+
+.fbbk-button,
+.fbbk-state-default,
+.fbbk-agendaDay-button,
+.fbbk-agendaWeek-button {
+	padding: 0 20px !important;
+	height: 34px !important; // same height of `fbbk-button-group`
+	background-color: #1E8FE4;
+	box-shadow: none;
+	border-color: transparent;
+	color: #F0F3F8;
+	font-size: $text-font-size !important;
+	text-shadow: none;
+	background-image: none;
+	border: 0;
+
+	outline: none;
+}
+
+.fbbk-month-button,
+.fbbk-agendaDay-button,
+.fbbk-agendaWeek-button  {
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+
+
+// .fbbk-right,
+// .fbbk-left {
+// 	float: none !important;
+// }
+
+.fbbk-toolbar .fbbk-center {
+	display: block;
+    width: 100px;
+    margin: 0 auto;
+
+    h2 {
+		color: $white;
+		font-size: $text-font-size;
+	}
+}
+
+/**
+ * Prev / Next Arrows (Buttons)
+ */
+
+.fbbk-left .fbbk-button-group .fbbk-button {
+	margin: 0;
+}
+
+.fbbk-state-default.fbbk-prev-button,
+.fbbk-state-default.fbbk-next-button {
+	border-radius: 100% !important;
+}
+
+.fbbk-prev-button,
+.fbbk-next-button {
+	position: absolute !important;
+	top: 11px;
+	padding: 0 !important;
+	height: 28px !important; 
+	width: 28px;
+	background-color: #313C4D;
+	box-shadow: none;
+	color: #CED0DA;
+	font-size: 8px !important;
+	text-shadow: none;
+	background-image: none;
+	border: 0;
+}
+
+.fbbk-prev-button {
+	left: 30px;
+}
+
+.fbbk-next-button {
+	right: 30px;
+}
+
+
+/**
+ * Days of the week - table header
+ */
+
+.fc th {
+	padding: 12px 0;
+	border: 0;
+	color: #ADAFB2;
+	text-transform: uppercase;
+	font-size: $text-small-font-size;
+	font-weight: $font-weight-bold;
+}
+
+/**
+ * Days Number - (table cell)
+ */
+
+.fbbk-day-number {
+	padding: 15px 15px 0 0 !important;
+	color: $text-color;
+	font-size: $h6-font-size;
+	font-weight: $font-weight-bold;
+}
+
+.fbbk-unthemed td {
+	border-color: $base-border-color;
+}
+
+/**
+ * Current Day
+ */
+
+.fbbk-unthemed td.fbbk-today {
+	background: none;
+}
+
+.fbbk-today .fbbk-day-number {
+	background-color: red;
+	padding: 0 !important;
+	margin: 10px 10px 8px 0;
+	width: 28px;
+	height: 28px;
+	line-height: 28px; // height of the box
+	border-radius: 100%;
+	text-align: center;
+	color: #fff;
+	//@include linear-gradient(to bottom, $btn-gradient--blue);
+}
+
+
+/**
+ * Event
+ */
+
+.fbbk-event {
+	margin: 2px 0 0 0;
+	color: $text-color;
+	font-size: $text-font-size;
+	font-weight: $font-weight-bold;
+	background-color: rgba(#1BB934, .1);
+	border: 0;
+	border-radius: 0;
+	border-left: 2px solid #E6EAEE;
+
+	&:hover {
+		color: $text-color;
+	}
+}
+
+.fbbk-event .fbbk-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 8px 8px 12px;
+}
+
+.fbbk-title {
+	order: 1;
+}
+
+.fbbk-time {
+	order: 2;
+	text-transform: uppercase;
+	color: #354052;
+	font-size: $text-small-font-size;
+	font-weight: $font-weight-normal !important;
+}
+
+
+/**
+ * Event Color Variations
+ */
+
+.fbbk-event--blue {
+	background-color: #269AF3; // fallback
+	background-color: rgba(#269AF3, .1);
+	border-color: #269AF3;
+}
+
+.fbbk-event--orange {
+	background-color: #FF7800; // fallback
+	background-color: rgba(#FF7800, .1);
+	border-color: #FF7800;
+}
+
+.fbbk-event--green {
+	background-color: #1BB934; // fallback
+	background-color: rgba(#1BB934, .1);
+	border-color: #1BB934;
+}

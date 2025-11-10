@@ -1,0 +1,97 @@
+/* ==========================================================================
+   #PROGRESS
+   ========================================================================== */
+
+.bbk-progress {
+	display: block;
+	width: 100%;
+	height: $progress-height;
+	margin: $progress-margin;
+	border-radius: $progress-border-radius;
+	background-color: $progress-background-color;
+}
+
+/**
+ * 1. Default (info) background-color would be applied, if class 
+ *    `bbk-progress--[color]` isn't specified.
+ */
+
+.bbk-progress__bar {
+	position: relative;
+	height: 100%;
+	border-radius: $progress-border-radius;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	@include linear-gradient(to bottom, $progress-bar-info-gradient); /* [1] */
+}
+
+
+/* Size variants
+   ========================================================================== */
+
+.bbk-progress--xsmall {
+	height: $progress-xsmall-height;
+}
+
+.bbk-progress--small {
+	height: $progress-small-height;
+}
+
+.bbk-progress--medium {
+	height: $progress-medium-height;
+}
+
+
+/* Style variants
+   ========================================================================== */
+
+.bbk-progress--danger {
+	.bbk-progress__bar {
+		@include linear-gradient(to bottom, $progress-bar-danger-gradient);
+	}
+}
+
+.bbk-progress--info {
+	.bbk-progress__bar {
+		@include linear-gradient(to bottom, $progress-bar-info-gradient);
+	}
+}
+
+.bbk-progress--primary {
+	.bbk-progress__bar {
+		@include linear-gradient(to bottom, $progress-bar-primary-gradient);
+	}
+}
+
+.bbk-progress--success {
+	.bbk-progress__bar {
+		@include linear-gradient(to bottom, $progress-bar-success-gradient);
+	}
+}
+
+.bbk-progress--warning {
+	.bbk-progress__bar {
+		@include linear-gradient(to bottom, $progress-bar-warning-gradient);
+	}
+}
+
+.bbk-progress--fancy {
+	.bbk-progress__bar {
+		@include linear-gradient(to bottom, $progress-bar-fancy-gradient);
+	}
+}
+
+/* Multi-level progress bars
+   ========================================================================== */
+
+.bbk-progress__bar {
+	.bbk-progress__bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background-color: red;
+		z-index: $z-index-200;
+	}
+}
